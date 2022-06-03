@@ -6,7 +6,7 @@ import comandos from '../support/commands'
 context('TCC - WEB', () => {
 
     beforeEach(() => {
-        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+        cy.visit('minha-conta/')
         cy.fixture('perfil').then((dados) => {
             cy.login(dados.usuario, dados.senha)
         });
