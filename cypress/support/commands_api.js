@@ -1,7 +1,7 @@
 Cypress.Commands.add('token', (usuario, senha) => {
     cy.request({
         method: 'POST',
-        url: '/rest-api/docs/coupons',
+        url: '/rest-api/docs/',
         body: {
             "user": usuario,
             "password": senha
@@ -12,19 +12,19 @@ Cypress.Commands.add('token', (usuario, senha) => {
     })
 })
 
- Cypress.Commands.add('cadastrarCupom' , (token, nome, quantidade, tipo, descricao) =>{
+ Cypress.Commands.add('addCupom' , (token, nomeCupom, quantidade, descricao) =>{
     cy.request({
-        method: 'POST', 
-        url: 'rest-api/docs/coupons',
-        headers: {authorization: token}, 
-        body: {
-            "code": nome,
+            method: 'POST', 
+            url: 'wp-json/wc/v3/coupons',
+            headers: {authorization: token}, 
+            body: {
+            "code": nomeCupom,
             "amount": quantidade,
-            "discount_type": tipo,
+            "discount_type": "fixed_product",
             "description": descricao
-          }, 
-          failOnStatusCode: false
+        }
+          
     })
- })
+})
 
  
