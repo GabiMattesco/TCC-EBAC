@@ -13,7 +13,7 @@ context('TCC - WEB', () => {
         cy.get('.page-title').should('contain', 'Minha conta')
     });
 
-    it.only('Deve incluir 3 itens no carrinho com sucesso - Usando comandos customizados', () => {
+    it.only('Deve incluir 3 itens no carrinho com sucesso', () => {
         cy.preCadastro('Gabriela', 'Mattesco')
         enderecopage.editarEnderecoFaturamento('Gabriela', 'Mattesco', 'Ebac', 'Brasil', 'Av. Brasil', '100', 'Rio de Janeiro', 'Rio de Janeiro', '21530000', '2177777777', 'gabrielamattesco@msn.com')
         enderecopage.editarEnderecoEntrega('Gabriela', 'Mattesco', 'Ebac', 'Brasil', 'Av. Brasil', '100', 'Rio de Janeiro', 'Rio de Janeiro', '21530000')
